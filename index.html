@@ -5,57 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenue</title>
     <style>
-        body {
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
+            overflow: hidden; /* Pour éviter les barres de défilement */
+        }
+
+        body {
+            background-image: url('file:///C:/Users/JOSIA/Desktop/giphy.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: fondAnimee 10s infinite alternate;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: url('giphy.webp') no-repeat center center fixed;
-            background-size: cover;
+        }
+
+        @keyframes fondAnimee {
+            0% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
         }
 
         .container {
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8); /* Arrière-plan semi-transparent pour améliorer la lisibilité du contenu */
+            background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent pour améliorer la lisibilité */
             padding: 20px;
             border-radius: 10px;
         }
 
-        .welcome-message {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #232526; /* Couleur du texte */
+        #welcome-message {
+            font-size: 2em;
+            animation: clignoteBienvenue 1.5s ease-in-out infinite alternate, grossitBienvenue 3s ease-in-out infinite alternate;
         }
 
-        .button-container {
+        @keyframes clignoteBienvenue {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes grossitBienvenue {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        #submit-button {
             margin-top: 20px;
-        }
-
-        button {
             padding: 10px 20px;
-            background-color: #ffd700; /* Couleur de fond du bouton */
-            color: #232526; /* Couleur du texte du bouton */
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
-        button:hover {
-            background-color: #e6b800; /* Couleur de fond du bouton au survol */
+        #submit-button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="welcome-message">Bienvenue Josias, le nouveau Développeur web !</h1>
-        <div class="button-container">
-            <button id="submit-button">Soumettre</button>
-        </div>
+        <h1 id="welcome-message">Bienvenue</h1>
+        <button id="submit-button">Soumettre</button>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var button = document.getElementById("submit-button");
+            button.addEventListener("click", function() {
+                welcomeStudent();
+            });
+        });
+
+        function welcomeStudent() {
+            var welcomeMessage = document.getElementById("welcome-message");
+            var name = "Josias"; // Changez ici pour le nom souhaité
+
+            welcomeMessage.textContent = "Bienvenue, " + name + ", le nouveau développeur web !";
+        }
+    </script>
 </body>
 </html>
