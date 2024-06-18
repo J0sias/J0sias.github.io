@@ -5,53 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenue</title>
     <style>
-        .container {
-            text-align: center;
-            margin-top: 50px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('file:///C:/Users/JOSIA/Desktop/giphy.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Empêche le défilement de la page si l'image est plus grande */
         }
-        .tab {
-            display: inline-block;
+
+        .content {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent pour le texte */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
             padding: 10px 20px;
-            background-color: #f0f0f0;
+            font-size: 16px;
             cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
             margin-top: 20px;
         }
-        .tab.active {
-            background-color: #ffd700; /* Couleur lumineuse pour l'onglet actif */
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #welcomeText {
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 id="welcome-message">Bienvenue</h1>
-        <button id="submit-button">Soumettre</button>
-        <div class="tab" id="suggested-by">Suggéré par 2fconsulting</div>
+    <div class="content">
+        <h1 id="welcomeText">Bienvenue</h1>
+        <button onclick="changeText()">Cliquez ici</button>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var button = document.getElementById("submit-button");
-            button.addEventListener("click", function() {
-                welcomeStudent();
-            });
-
-            var tab = document.getElementById("suggested-by");
-            tab.addEventListener("click", function() {
-                toggleActive(tab);
-            });
-        });
-
-        function welcomeStudent() {
-            var welcomeMessage = document.getElementById("welcome-message");
-            var name = "Josias"; // Changez ici pour le nom souhaité
-
-            welcomeMessage.textContent = "Bienvenue, " + name + ", le nouveau développeur web !";
-        }
-
-        function toggleActive(element) {
-            element.classList.toggle("active");
+        function changeText() {
+            var welcomeText = document.getElementById("welcomeText");
+            welcomeText.textContent = "Josias Le nouveau développeur web";
         }
     </script>
 </body>
