@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('giphy.webp') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Arrière-plan semi-transparent pour améliorer la lisibilité du contenu */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .welcome-message {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #232526; /* Couleur du texte */
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ffd700; /* Couleur de fond du bouton */
+            color: #232526; /* Couleur du texte du bouton */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e6b800; /* Couleur de fond du bouton au survol */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="welcome-message">Bienvenue Josias, le nouveau Développeur web !</h1>
+        <div class="button-container">
+            <button id="submit-button">Soumettre</button>
+        </div>
+    </div>
+</body>
+</html>
